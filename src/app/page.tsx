@@ -1,4 +1,4 @@
-function Section({title, children}: {title: string, children: any}) {
+function Section({title, children}: {title: string, children: React.ReactNode}) {
   return (
     <div>
       <h2 className="font-bold">{title}</h2>

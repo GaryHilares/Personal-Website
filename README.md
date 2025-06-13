@@ -1,4 +1,4 @@
-# Personal Website
+<h1 align="center">Personal Website</h1>
 
 <p align="center">
 <img alt="badge-lastcommit" src="https://img.shields.io/github/last-commit/GaryHilares/Personal-Website?style=for-the-badge">
@@ -7,6 +7,8 @@
 <img alt="badge-contributors" src="https://img.shields.io/github/contributors/GaryHilares/Personal-Website?style=for-the-badge">
 <img alt="badge-codesize" src="https://img.shields.io/github/languages/code-size/GaryHilares/Personal-Website?style=for-the-badge">
 </p>
+
+![Website screenshot](https://github.com/user-attachments/assets/a17252e0-ff13-48f5-a1cc-ad1607baa595)
 
 ## What is Personal Website?
 This is a personal website of Gary Hilares made by Gary Hilares for Gary Hilares.

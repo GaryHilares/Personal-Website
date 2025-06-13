@@ -1,3 +1,40 @@
+function Section({title, children}: {title: string, children: any}) {
+  return (
+    <div>
+      <h2 className="font-bold">{title}</h2>
+      {children}
+    </div>
+  )
+}
+
+function ProjectCard({name, url, date, technologies, bulletPoints}: {
+  name: string,
+  url: string,
+  date: string,
+  technologies: string[],
+  bulletPoints: string[]
+}) {
+  return (
+    <div>
+      <h3 className="font-bold">
+            <a
+              href={url}
+              className="underline text-blue-700"
+            >
+              {name}
+            </a>
+          </h3>
+          <p className="italic">{date}</p>
+          <p>
+            <span className="underline">Technologies:</span> {technologies.join(", ")}.
+          </p>
+          <ul className="list-disc ms-4">
+            {bulletPoints.map((bulletPoint, idx) => <li key={idx}>{bulletPoint}</li>)}
+          </ul>
+      </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -30,105 +67,56 @@ export default function Home() {
               </a>
             </li>
           </ul>
-          <h2 className="font-bold underline">Technical skills</h2>
-          <p>
-            <span className="underline">Languages:</span> TypeScript,
-            JavaScript, Node.js, Python, R, CSS3, HTML5, C++, C, Java
-          </p>
-          <p>
-            <span className="underline">Web frameworks:</span> Next.js,
-            Express.js, React, ChromeAPI, Flask, RESTful APIs
-          </p>
-          <p>
-            <span className="underline">Databases & other tools:</span>{" "}
-            PostgreSQL, SQLite, MongoDB, Linux, Git, GitHub, Docker, Vercel
-          </p>
-          <h2 className="font-bold underline">Personal technical projects</h2>
-          <h3 className="font-bold">
-            <a
-              href="https://github.com/GaryHilares/Liberty-Arrow-extension"
-              className="underline text-blue-700"
-            >
-              Liberty Arrow (Website blocker extension)
-            </a>
-          </h3>
-          <p className="italic">June 2024 - February 2025</p>
-          <p>
-            <span className="underline">Technologies:</span> TypeScript,
-            JavaScript, React, Sass, ChromeAPI, Python, Flask, MongoDB.
-          </p>
-          <ul className="list-disc ms-4">
-            <li>
-              Prompted the user to choose distractive websites through a React
-              controlled form.
-            </li>
-            <li>
-              Redirected the user away from distracting websites using the
-              Chrome extension API.
-            </li>
-            <li>
-              Tracked verified emails and tokens in a MongoDB database using
-              Python and Flask.
-            </li>
-            <li>
-              Published extension on the Mozilla add-ons marketplace, achieving
-              a rating 5.0/5.0.
-            </li>
-          </ul>
-          <h3 className="font-bold">
-            <a
-              href="https://github.com/GaryHilares/3D-Snake"
-              className="underline text-blue-700"
-            >
-              3D Snake browser game
-            </a>
-          </h3>
-          <p className="italic">January 2025</p>
-          <p>
-            <span className="underline">Technologies:</span> TypeScript, Jest,
-            ThreeJS, HTML, CSS, Express.js, MongDB, Vercel.
-          </p>
-          <ul className="list-disc ms-4">
-            <li>
-              Rendered a 3D Snake game to the browser using ThreeJS in
-              TypeScript.
-            </li>
-            <li>
-              Improved maintainability by implementing the Model-View-Controller
-              design pattern.
-            </li>
-            <li>
-              Kept track of statistics in a MongoDB database through an
-              Express.js back-end.
-            </li>
-          </ul>
-          <h3 className="font-bold">
-            <a
-              href="https://github.com/GaryHilares/Rubber-Numbers/"
-              className="underline text-blue-700"
-            >
-              Rubber Numbers (C++ arbitrary precision arithmetic library)
-            </a>
-          </h3>
-          <p className="italic">April 2021 - May 2025</p>
-          <p>
-            <span className="underline">Technology:</span> C++, CMake,
-            GoogleTest, Doxygen, gcov, lcov, genhtml, gprof, GitHub Actions.
-          </p>
-          <ul className="list-disc ms-4">
-            <li>
-              Automated testing in CI using GoogleTest and GitHub Actions for
-              correctness.
-            </li>
-            <li>
-              Automatically rendered my Doxygen documentation to GitHub Pages
-              and released to GitHub releases using CD with GitHub Actions
-            </li>
-            <li>
-              Measured test coverage using gcov and lcov and displayed it as a
-              HTML graphical front-end using genhtml.
-            </li>
-          </ul>
+          <Section title="Technical skills">
+            <p>
+              <span className="underline">Languages:</span> TypeScript,
+              JavaScript, Node.js, Python, R, CSS3, HTML5, C++, C, Java
+            </p>
+            <p>
+              <span className="underline">Web frameworks:</span> Next.js,
+              Express.js, React, ChromeAPI, Flask, RESTful APIs
+            </p>
+            <p>
+              <span className="underline">Databases & other tools:</span>{" "}
+              PostgreSQL, SQLite, MongoDB, Linux, Git, GitHub, Docker, Vercel
+            </p>
+          </Section>
+          <Section title="Personal technical projects">
+            <ProjectCard
+              name="Liberty Arrow (Website blocker extension)"
+              url="https://github.com/GaryHilares/Liberty-Arrow-extension"
+              date="June 2024 - February 2025"
+              technologies={["TypeScript", "JavaScript", "React", "Sass", "ChromeAPI", "Python", "Flask", "MongoDB"]}
+              bulletPoints={[
+                "Prompted the user to choose distractive websites through a React controlled form.",
+                "Redirected the user away from distracting websites using the Chrome extension API.",
+                "Tracked verified emails and tokens in a MongoDB database using Python and Flask.",
+                "Published extension on the Mozilla add-ons marketplace, achieving a rating 5.0/5.0."
+              ]}
+            />
+            <ProjectCard
+              name="3D Snake browser game"
+              url="https://github.com/GaryHilares/3D-Snake"
+              date="January 2025"
+              technologies={["TypeScript", "Jest", "ThreeJS", "HTML", "CSS", "Express.js", "MongoDB", "Vercel"]}
+              bulletPoints={[
+                "Rendered a 3D Snake game to the browser using ThreeJS in TypeScript.",
+                "Improved maintainability by implementing the Model-View-Controller design pattern.",
+                "Kept track of statistics in a MongoDB database through an Express.js back-end."
+              ]}
+            />
+            <ProjectCard
+              name="Rubber Numbers (C++ arbitrary precision arithmetic library)"
+              url="https://github.com/GaryHilares/Rubber-Numbers/"
+              date="April 2021 - May 2025"
+              technologies={["C++", "CMake", "GoogleTest", "Doxygen", "gcov", "lcov", "genhtml", "gprof", "GitHub Actions"]}
+              bulletPoints={[
+                "Automated testing in CI using GoogleTest and GitHub Actions for correctness.",
+                "Automatically rendered my Doxygen documentation to GitHub Pages and released to GitHub releases using CD with GitHub Actions",
+                "Measured test coverage using gcov and lcov and displayed it as a HTML graphical front-end using genhtml."
+              ]}
+            />
+          </Section>
           <h2 className="font-bold underline">Contests</h2>
           <h3 className="font-bold">
             1st place in the ICPC PacNW 2024 Div. 2 contest

@@ -1,3 +1,31 @@
+interface LinkData {
+  text: string;
+  url: string;
+}
+
+function Hero({title, subtitle, links}: {title: string, subtitle: string, links: Array<LinkData>}) {
+  return (
+    <div className="min-h-screen flex">
+      <div className="m-auto">
+        <h1 className="text-center font-bold text-4xl">{title}</h1>
+        <p className="text-center font-bold text-lg">{subtitle}</p>
+        <ul className="text-center">
+          {links.map((link, idx) => (
+            <li key={idx} className="inline-block mx-3">
+              <a
+                href={link.url}
+                className="underline text-blue-700"
+              >
+                {link.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div> 
+  )
+}
+
 function Section({title, children}: {title: string, children: React.ReactNode}) {
   return (
     <div>
@@ -40,33 +68,15 @@ export default function Home() {
     <>
       <main className="m-3">
         <article>
-          <h1 className="text-center font-bold text-xl">Gary Hilares</h1>
-          <ul className="text-center">
-            <li className="inline-block mx-3">
-              <a
-                href="https://github.com/GaryHilares"
-                className="underline text-blue-700"
-              >
-                GitHub
-              </a>
-            </li>
-            <li className="inline-block mx-3">
-              <a
-                href="https://www.linkedin.com/in/gary-hilares/"
-                className="underline text-blue-700"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li className="inline-block mx-3">
-              <a
-                href="https://devpost.com/GaryStriving"
-                className="underline text-blue-700"
-              >
-                DevPost
-              </a>
-            </li>
-          </ul>
+          <Hero
+            title="Gary Hilares"
+            subtitle="All-rounder software developer"
+            links={[
+              {text: "GitHub", url: "https://github.com/GaryHilares"},
+              {text: "LinkedIn", url: "https://www.linkedin.com/in/gary-hilares/"},
+              {text: "DevPost", url: "https://devpost.com/GaryStriving"}
+            ]}
+          />
           <Section title="Technical skills">
             <p>
               <span className="underline">Languages:</span> TypeScript,

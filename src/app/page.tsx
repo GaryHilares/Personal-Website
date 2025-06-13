@@ -31,7 +31,7 @@ function Hero({title, subtitle, subsubtitle, src, links}: {title: string, subtit
           ))}
         </ul>
         <div className="my-2">
-          <img src={src} width="200" heigh="200" className="m-auto" />
+          <img src={src} width="200" height="200" className="m-auto" />
         </div>
       </div>
     </div> 

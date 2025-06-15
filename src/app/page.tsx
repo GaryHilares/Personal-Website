@@ -75,6 +75,34 @@ function ProjectCard({name, url, date, technologies, bulletPoints}: {
   );
 }
 
+function TimelineItem({title, date, organization, bulletPoints}: {
+  title: string,
+  date: string,
+  organization: string,
+  bulletPoints: Array<string>
+}) {
+  return (
+    <div>
+      <h3 className="font-bold">{title}</h3>
+      <p className="italic">{date}</p>
+      <p>At {organization}</p>
+      <ul className="list-disc ms-4">
+        {bulletPoints.map((bulletPoint, idx) => (
+          <li key={idx}>{bulletPoint}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function SkillSubsectionDisplay({title, skills}: {title: string, skills: Array<string>}) {
+  return (
+    <p>
+      <span className="underline">{title}:</span> {skills.join(", ")}
+    </p>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -93,18 +121,15 @@ export default function Home() {
             ]}
           />
           <Section title="Technical skills">
-            <p>
-              <span className="underline">Languages:</span> TypeScript,
-              JavaScript, Node.js, Python, R, CSS3, HTML5, Rust, C++, C, Java
-            </p>
-            <p>
-              <span className="underline">Web frameworks:</span> Next.js,
-              Express.js, React, ChromeAPI, Flask, RESTful APIs
-            </p>
-            <p>
-              <span className="underline">Databases & other tools:</span>{" "}
-              PostgreSQL, SQLite, MongoDB, Linux, Git, GitHub, Docker, Vercel
-            </p>
+            <SkillSubsectionDisplay
+              title="Languages"
+              skills={["TypeScript", "JavaScript", "Node.js", "Python", "R", "CSS3", "HTML5", "Rust", "C++", "C", "Java"]} />
+            <SkillSubsectionDisplay
+              title="Web frameworks"
+              skills={["Next.js", "Express.js", "React", "ChromeAPI", "Flask", "RESTful APIs"]} />
+            <SkillSubsectionDisplay
+              title="Databases & other tools"
+              skills={["PostgreSQL", "SQLite", "MongoDB", "Linux", "Git", "GitHub", "Docker", "Vercel"]} />
           </Section>
           <Section title="Personal technical projects">
             <ProjectCard
@@ -143,50 +168,34 @@ export default function Home() {
             />
           </Section>
           <Section title="Work Experience">
-            <h3 className="font-bold">Computer science teaching assistant</h3>
-            <p className="italic">September 2024 - April 2025</p>
-            <p>At University of British Columbia, Vancouver, BC</p>
-            <ul className="list-disc ms-4">
-              <li>
-                Worked with 1-2 other teaching assistants to hold 40+ 3-hour lab
-                sessions on 10 topics related to systematic program design with
-                5-30 students each.
-              </li>
-              <li>
-                Assisted students to learn through one-to-one conversations held
-                during my 1-hour-long and 2-hour-long weekly office hours.
-              </li>
-            </ul>
+            <TimelineItem
+              title="Computer science teaching assistant"
+              date="September 2024 - April 2025"
+              organization="University of British Columbia, Vancouver, BC"
+              bulletPoints={[
+                "Worked with 1-2 other teaching assistants to hold 40+ 3-hour lab sessions on 10 topics related to systematic program design with 5-30 students each.",
+                "Assisted students to learn through one-to-one conversations held during my 1-hour-long and 2-hour-long weekly office hours."
+              ]} />
           </Section>
           <Section title="Contests & Awards">
-            <h3 className="font-bold">
-              1st place in the ICPC PacNW 2024 Div. 2 contest
-            </h3>
-            <p className="italic">September 2024 - April 2025</p>
-            <p>At Simon Fraser University, Burnaby, BC</p>
-            <ul className="list-disc ms-4">
-              <li>
-                Won 1st place out of 85 teams in the International Collegiate
-                Programming Contest PacNW 2024 Div. 2.
-              </li>
-              <li>
-                Cooperatively solved challenging problems in topics like dynamic
-                programming with two other UBC students.
-              </li>
-            </ul>
+            <TimelineItem
+              title="1st place in the ICPC PacNW 2024 Div. 2 contest"
+              date="November 2024"
+              organization="Simon Fraser University, Burnaby, BC"
+              bulletPoints={[
+                "Won 1st place out of 85 teams in the International Collegiate Programming Contest PacNW 2024 Div. 2.",
+                "Cooperatively solved challenging problems in topics like dynamic programming with two other UBC students."
+              ]} />
           </Section>
           <Section title="Education & Certifications">
-            <h3 className="font-bold">Bachelor of Science, Computer Science</h3>
-            <p className="italic">September 2023 - May 2028 (expected)</p>
-            <p>At University of British Columbia, Vancouver, BC</p>
-            <ul className="list-disc ms-4">
-              <li>GPA: 94.8% (73 credits so far).</li>
-              <li>
-                Awarded the IMES scholarship, given to exceptional international
-                students entering UBC based on academic excellence and community
-                involvement
-              </li>
-            </ul>
+            <TimelineItem
+              title="Bachelor of Science, Computer Science"
+              date="September 2023 - May 2028 (expected)"
+              organization="University of British Columbia, Vancouver, BC"
+              bulletPoints={[
+                "GPA: 94.8% (73 credits so far).",
+                "Awarded the IMES scholarship, given to exceptional international students entering UBC based on academic excellence and community involvement"
+              ]} />
           </Section>
         </article>
       </main>

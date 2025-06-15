@@ -112,7 +112,7 @@ export default function Home() {
   return (
     <>
       <WIPHeader />
-      <main className="m-3">
+      <main className="p-3 md:w-[66%] m-auto">
         <article>
           <Hero
             title="Gary Hilares"

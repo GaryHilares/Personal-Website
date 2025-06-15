@@ -21,17 +21,16 @@ function Hero({title, subtitle, subsubtitle, src, links, phrase}:
     phrase: string
   }) {
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-[75vh] flex">
       <div className="m-auto">
         <h1 className="text-center font-bold text-4xl">{title}</h1>
         <p className="text-center font-bold text-xl">{subtitle}</p>
         <p className="text-center text-lg">{subsubtitle}</p>
         <ul className="text-center">
           {links.map((link, idx) => (
-            <li key={idx} className="inline-block mx-3">
+            <li key={idx} className="inline-block my-1 mx-3 px-1 border-1 rounded-md" style={{color: "blue"}}>
               <a
                 href={link.url}
-                className="underline"
               >
                 {link.text}
               </a>
@@ -64,22 +63,17 @@ function ProjectCard({name, url, date, technologies, bulletPoints}: {
   bulletPoints: string[]
 }) {
   return (
-    <div>
-      <h3 className="font-bold">
-            <a
-              href={url}
-              className="underline text-blue-700"
-            >
-              {name}
-            </a>
-          </h3>
-          <p className="italic">{date}</p>
-          <p>
-            <span className="underline">Technologies:</span> {technologies.join(", ")}.
+    <div className="py-3">
+      <h3 className="font-bold">{name}</h3>
+      <p className="italic">{date}</p>
+        <p>
+          <span className="underline">Technologies:</span> {technologies.join(", ")}.
           </p>
           <ul className="list-disc ms-4">
             {bulletPoints.map((bulletPoint, idx) => <li key={idx}>{bulletPoint}</li>)}
           </ul>
+          <p className="underline">Links:</p>
+          <a href={url} className="inline-block border-1 rounded-md px-1" style={{color: "blue"}}>GitHub</a>
       </div>
   );
 }
@@ -92,7 +86,7 @@ function TimelineItem({title, date, src, organization, bulletPoints}: {
   bulletPoints: Array<string>
 }) {
   return (
-    <div className="relative border-s-2 ms-2 ps-6 border-black border-line border-dotted">
+    <div className="relative border-s-2 ms-2 py-3 ps-6 border-black border-line border-dotted">
       <div
         className="absolute left-[calc(var(--spacing)*-5)] bg-white bg-size-[calc(var(--spacing)*4.5)] bg-no-repeat bg-center h-9 w-9 border-black border-1 rounded-full"
         style={{backgroundImage: `url(${src})`}} />
@@ -110,7 +104,7 @@ function TimelineItem({title, date, src, organization, bulletPoints}: {
 
 function SkillSubsectionDisplay({title, skills}: {title: string, skills: Array<string>}) {
   return (
-    <div>
+    <div className="py-1">
       <h3 className="underline">{title}:</h3>
       <ul>
         {skills.map((skill, idx) => (

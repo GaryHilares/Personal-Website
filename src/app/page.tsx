@@ -13,13 +13,13 @@ function WIPHeader() {
 
 function Hero({title, subtitle, subsubtitle, src, links, phrase}:
   {
-title: string,
-subtitle: string,
-subsubtitle: string,
-src: string,
-links: Array<LinkData>,
+    title: string,
+    subtitle: string,
+    subsubtitle: string,
+    src: string,
+    links: Array<LinkData>,
     phrase: string
-}) {
+  }) {
   return (
     <div className="min-h-screen flex">
       <div className="m-auto">
@@ -41,7 +41,7 @@ links: Array<LinkData>,
         <div className="my-2">
           <img src={src} width="200" height="200" className="m-auto" />
         </div>
-<p className="text-center text-lg">{phrase}</p>
+        <p className="text-center text-lg">{phrase}</p>
       </div>
     </div> 
   )
@@ -84,14 +84,18 @@ function ProjectCard({name, url, date, technologies, bulletPoints}: {
   );
 }
 
-function TimelineItem({title, date, organization, bulletPoints}: {
+function TimelineItem({title, date, src, organization, bulletPoints}: {
   title: string,
   date: string,
+  src: string,
   organization: string,
   bulletPoints: Array<string>
 }) {
   return (
-    <div>
+    <div className="relative border-s-2 ms-2 ps-6 border-black border-line border-dotted">
+      <div
+        className="absolute left-[calc(var(--spacing)*-5)] bg-white bg-size-[calc(var(--spacing)*4.5)] bg-no-repeat bg-center h-9 w-9 border-black border-1 rounded-full"
+        style={{backgroundImage: `url(${src})`}} />
       <h3 className="font-bold">{title}</h3>
       <p className="italic">{date}</p>
       <p>At {organization}</p>
@@ -186,6 +190,7 @@ export default function Home() {
             <TimelineItem
               title="Computer science teaching assistant"
               date="September 2024 - April 2025"
+              src="/img/ubc-logo.jpg"
               organization="University of British Columbia, Vancouver, BC"
               bulletPoints={[
                 "Worked with 1-2 other teaching assistants to hold 40+ 3-hour lab sessions on 10 topics related to systematic program design with 5-30 students each.",
@@ -196,6 +201,7 @@ export default function Home() {
             <TimelineItem
               title="1st place in the ICPC PacNW 2024 Div. 2 contest"
               date="November 2024"
+              src="/img/icpc-logo.png"
               organization="Simon Fraser University, Burnaby, BC"
               bulletPoints={[
                 "Won 1st place out of 85 teams in the International Collegiate Programming Contest PacNW 2024 Div. 2.",
@@ -206,6 +212,7 @@ export default function Home() {
             <TimelineItem
               title="Bachelor of Science, Computer Science"
               date="September 2023 - May 2028 (expected)"
+              src="/img/ubc-logo.jpg"
               organization="University of British Columbia, Vancouver, BC"
               bulletPoints={[
                 "GPA: 94.8% (73 credits so far).",

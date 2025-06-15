@@ -11,7 +11,15 @@ function WIPHeader() {
   );
 }
 
-function Hero({title, subtitle, subsubtitle, src, links}: {title: string, subtitle: string, subsubtitle: string, src: string, links: Array<LinkData>}) {
+function Hero({title, subtitle, subsubtitle, src, links, phrase}:
+  {
+title: string,
+subtitle: string,
+subsubtitle: string,
+src: string,
+links: Array<LinkData>,
+    phrase: string
+}) {
   return (
     <div className="min-h-screen flex">
       <div className="m-auto">
@@ -33,6 +41,7 @@ function Hero({title, subtitle, subsubtitle, src, links}: {title: string, subtit
         <div className="my-2">
           <img src={src} width="200" height="200" className="m-auto" />
         </div>
+<p className="text-center text-lg">{phrase}</p>
       </div>
     </div> 
   )
@@ -124,6 +133,7 @@ export default function Home() {
               {text: "LinkedIn", url: "https://www.linkedin.com/in/gary-hilares/"},
               {text: "DevPost", url: "https://devpost.com/GaryStriving"}
             ]}
+            phrase="Welcome to my website!"
           />
           <Section title="Technical skills">
             <SkillSubsectionDisplay

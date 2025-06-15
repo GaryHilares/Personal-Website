@@ -97,9 +97,14 @@ function TimelineItem({title, date, organization, bulletPoints}: {
 
 function SkillSubsectionDisplay({title, skills}: {title: string, skills: Array<string>}) {
   return (
-    <p>
-      <span className="underline">{title}:</span> {skills.join(", ")}
-    </p>
+    <div>
+      <h3 className="underline">{title}:</h3>
+      <ul>
+        {skills.map((skill, idx) => (
+          <li className="inline-block p-1 border-1 m-1 rounded-md" key={idx}>{skill}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

@@ -97,8 +97,8 @@ function TimelineItem({title, date, src, organization, bulletPoints}: {
         className="absolute left-[calc(var(--spacing)*-5)] bg-white bg-size-[calc(var(--spacing)*4.5)] bg-no-repeat bg-center h-9 w-9 border-black border-1 rounded-full"
         style={{backgroundImage: `url(${src})`}} />
       <h3 className="font-bold">{title}</h3>
+      <p>{organization}</p>
       <p className="italic">{date}</p>
-      <p>At {organization}</p>
       <ul className="list-disc ms-4">
         {bulletPoints.map((bulletPoint, idx) => (
           <li key={idx}>{bulletPoint}</li>
@@ -191,7 +191,7 @@ export default function Home() {
               title="Computer science teaching assistant"
               date="September 2024 - April 2025"
               src="/img/ubc-logo.jpg"
-              organization="University of British Columbia, Vancouver, BC"
+              organization="The University of British Columbia @ Vancouver, BC"
               bulletPoints={[
                 "Worked with 1-2 other teaching assistants to hold 40+ 3-hour lab sessions on 10 topics related to systematic program design with 5-30 students each.",
                 "Assisted students to learn through one-to-one conversations held during my 1-hour-long and 2-hour-long weekly office hours."
@@ -202,7 +202,7 @@ export default function Home() {
               title="1st place in the ICPC PacNW 2024 Div. 2 contest"
               date="November 2024"
               src="/img/icpc-logo.png"
-              organization="Simon Fraser University, Burnaby, BC"
+              organization="Simon Fraser University @ Burnaby, BC"
               bulletPoints={[
                 "Won 1st place out of 85 teams in the International Collegiate Programming Contest PacNW 2024 Div. 2.",
                 "Cooperatively solved challenging problems in topics like dynamic programming with two other UBC students."
@@ -213,7 +213,7 @@ export default function Home() {
               title="Bachelor of Science, Computer Science"
               date="September 2023 - May 2028 (expected)"
               src="/img/ubc-logo.jpg"
-              organization="University of British Columbia, Vancouver, BC"
+              organization="The University of British Columbia @ Vancouver, BC"
               bulletPoints={[
                 "GPA: 94.8% (73 credits so far).",
                 "Awarded the IMES scholarship, given to exceptional international students entering UBC based on academic excellence and community involvement"

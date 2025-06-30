@@ -6,15 +6,6 @@ interface LinkData {
   url: string;
 }
 
-function WIPBanner() {
-  return (
-    <div className="bg-black text-white p-3">
-      This website is currently under construction. Come back soon to see
-      updates!
-    </div>
-  );
-}
-
 function NavBar({
   personalProjectsId,
   technicalSkillsId,
@@ -30,7 +21,6 @@ function NavBar({
 }) {
   return (
     <header>
-      <WIPBanner />
       <div className="overflow-auto mx-3">
         <h1 className="font-bold inline-block m-3">Gary Hilares</h1>
         <ul className="float-right">

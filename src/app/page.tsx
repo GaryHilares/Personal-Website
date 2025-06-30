@@ -37,8 +37,7 @@ function Hero({
           {links.map((link, idx) => (
             <li
               key={idx}
-              className="inline-block my-1 mx-3 px-1 border-1 rounded-md"
-              style={{ color: "blue" }}
+              className="inline-block my-1 mx-3 px-1 border-1 rounded-md text-blue-600 hover:text-white hover:bg-blue-600 transition-colors"
             >
               <a href={link.url}>{link.text}</a>
             </li>
@@ -97,8 +96,7 @@ function ProjectCard({
       <p className="underline">Links:</p>
       <a
         href={url}
-        className="inline-block border-1 rounded-md px-1"
-        style={{ color: "blue" }}
+        className="inline-block border-1 rounded-md px-1 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors"
       >
         GitHub
       </a>

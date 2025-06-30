@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 
 import { ReactNode, useEffect } from "react";
 
-function AosInitializer(): ReactNode {
+function AosInitializer() {
   useEffect(() => {
     AOS.init();
   }, []);

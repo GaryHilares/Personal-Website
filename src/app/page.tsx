@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { AosInitializer } from "./aos";
 
 interface LinkData {
   text: string;
@@ -70,7 +71,7 @@ function Hero({
   phrase: string;
 }) {
   return (
-    <div className="min-h-[75vh] flex">
+    <div className="min-h-[75vh] flex" data-aos="flip-up">
       <div className="m-auto">
         <h1 className="text-center font-bold text-4xl">{title}</h1>
         <p className="text-center font-bold text-xl">{subtitle}</p>
@@ -104,7 +105,7 @@ function Section({
   id: string;
 }) {
   return (
-    <div className="m-3" id={id}>
+    <div className="m-3" id={id} data-aos="fade-up">
       <h2 className="font-bold text-xl">{title}</h2>
       {children}
     </div>
@@ -208,6 +209,7 @@ export default function Home() {
   const educationId = `education-id-${useId()}`;
   return (
     <>
+      <AosInitializer />
       <NavBar
         personalProjectsId={personalProjectsId}
         technicalSkillsId={technicalSkillsId}

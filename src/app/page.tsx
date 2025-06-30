@@ -1,13 +1,55 @@
+import { useId } from "react";
+
 interface LinkData {
   text: string;
   url: string;
 }
 
-function WIPHeader() {
+function WIPBanner() {
   return (
-    <header className="bg-black text-white p-3">
+    <div className="bg-black text-white p-3">
       This website is currently under construction. Come back soon to see
       updates!
+    </div>
+  );
+}
+
+function NavBar({
+  personalProjectsId,
+  technicalSkillsId,
+  workExperienceId,
+  contestsId,
+  educationId,
+}: {
+  personalProjectsId: string;
+  technicalSkillsId: string;
+  workExperienceId: string;
+  contestsId: string;
+  educationId: string;
+}) {
+  return (
+    <header>
+      <WIPBanner />
+      <div className="overflow-auto mx-3">
+        <h1 className="font-bold inline-block m-3">Gary Hilares</h1>
+        <ul className="float-right">
+          <li className="inline-block m-3">
+            <a href={`#${technicalSkillsId}`}>Technical skills</a>
+          </li>
+          <li className="inline-block m-3">
+            <a href={`#${personalProjectsId}`}>Personal projects</a>
+          </li>
+          <li className="inline-block m-3">
+            <a href={`#${workExperienceId}`}>Work experience</a>
+          </li>
+          <li className="inline-block m-3">
+            <a href={`#${contestsId}`}>Contests & Awards</a>
+          </li>
+          <li className="inline-block m-3">
+            <a href={`#${educationId}`}>Education</a>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }
@@ -55,12 +97,14 @@ function Hero({
 function Section({
   title,
   children,
+  id,
 }: {
   title: string;
   children: React.ReactNode;
+  id: string;
 }) {
   return (
-    <div className="m-3">
+    <div className="m-3" id={id}>
       <h2 className="font-bold text-xl">{title}</h2>
       {children}
     </div>
@@ -157,9 +201,20 @@ function SkillSubsectionDisplay({
 }
 
 export default function Home() {
+  const personalProjectsId = `personal-projects-${useId()}`;
+  const technicalSkillsId = `technical-skills-${useId()}`;
+  const workExperienceId = `work-experience-${useId()}`;
+  const contestsId = `contests-id-${useId()}`;
+  const educationId = `education-id-${useId()}`;
   return (
     <>
-      <WIPHeader />
+      <NavBar
+        personalProjectsId={personalProjectsId}
+        technicalSkillsId={technicalSkillsId}
+        workExperienceId={workExperienceId}
+        contestsId={contestsId}
+        educationId={educationId}
+      />
       <main className="p-3 md:w-[66%] m-auto">
         <article>
           <Hero
@@ -177,7 +232,7 @@ export default function Home() {
             ]}
             phrase="Welcome to my website!"
           />
-          <Section title="Technical skills">
+          <Section title="Technical skills" id={technicalSkillsId}>
             <SkillSubsectionDisplay
               title="Languages"
               skills={[
@@ -219,7 +274,7 @@ export default function Home() {
               ]}
             />
           </Section>
-          <Section title="Personal technical projects">
+          <Section title="Personal technical projects" id={personalProjectsId}>
             <ProjectCard
               name="Liberty Arrow (Website blocker extension)"
               url="https://github.com/GaryHilares/Liberty-Arrow-extension"
@@ -283,7 +338,7 @@ export default function Home() {
               ]}
             />
           </Section>
-          <Section title="Work Experience">
+          <Section title="Work Experience" id={workExperienceId}>
             <TimelineItem
               title="Computer science teaching assistant"
               date="September 2024 - April 2025"
@@ -295,7 +350,7 @@ export default function Home() {
               ]}
             />
           </Section>
-          <Section title="Contests & Awards">
+          <Section title="Contests & Awards" id={contestsId}>
             <TimelineItem
               title="1st place in the ICPC PacNW 2024 Div. 2 contest"
               date="November 2024"
@@ -307,7 +362,7 @@ export default function Home() {
               ]}
             />
           </Section>
-          <Section title="Education & Certifications">
+          <Section title="Education & Certifications" id={educationId}>
             <TimelineItem
               title="Bachelor of Science, Computer Science"
               date="September 2023 - May 2028 (expected)"

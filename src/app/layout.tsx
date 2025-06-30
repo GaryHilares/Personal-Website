@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Home - Gary Hilares's personal website",
-  description: "Gary Hilares's personal website for showcasing software development projects.",
+  description:
+    "Gary Hilares's personal website for showcasing software development projects.",
 };
 
 export default function RootLayout({

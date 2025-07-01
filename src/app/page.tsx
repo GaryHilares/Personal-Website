@@ -95,9 +95,11 @@ function Section({
   id: string;
 }) {
   return (
-    <div className="m-3" id={id} data-aos="fade-up">
-      <h2 className="font-bold text-xl">{title}</h2>
-      {children}
+    <div id={id}>
+      <div className="m-3" data-aos="fade-up">
+        <h2 className="font-bold text-xl">{title}</h2>
+        {children}
+      </div>
     </div>
   );
 }

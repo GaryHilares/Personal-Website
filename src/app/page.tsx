@@ -37,7 +37,7 @@ function NavBar({
             <a href={`#${contestsId}`}>Contests & Awards</a>
           </li>
           <li className="inline-block m-3">
-            <a href={`#${educationId}`}>Education</a>
+            <a href={`#${educationId}`}>Education & Certifications</a>
           </li>
         </ul>
       </div>
@@ -346,13 +346,22 @@ export default function Home() {
           </Section>
           <Section title="Contests & Awards" id={contestsId}>
             <TimelineItem
-              title="1st place in the ICPC PacNW 2024 Div. 2 contest"
+              title="1st place in the International Collegiate Programming Contest PacNW 2024 Div. 2 contest"
               date="November 2024"
               src="/img/icpc-logo.png"
               organization="Simon Fraser University @ Burnaby, BC"
               bulletPoints={[
                 "Won 1st place out of 85 teams in the International Collegiate Programming Contest PacNW 2024 Div. 2.",
                 "Cooperatively solved challenging problems in topics like dynamic programming with two other UBC students.",
+              ]}
+            />
+            <TimelineItem
+              title="IMES scholarship"
+              date="May 2023"
+              src="/img/ubc-logo.jpg"
+              organization="The University of British Columbia @ Vancouver, BC"
+              bulletPoints={[
+                "Awarded the IMES scholarship, given to exceptional international students entering UBC.",
               ]}
             />
           </Section>
@@ -362,9 +371,15 @@ export default function Home() {
               date="September 2023 - May 2028 (expected)"
               src="/img/ubc-logo.jpg"
               organization="The University of British Columbia @ Vancouver, BC"
+              bulletPoints={["GPA: 94.8% (73 credits so far)."]}
+            />
+            <TimelineItem
+              title="Completion of CS50x course"
+              date="2022"
+              src="/img/harvard-logo.png"
+              organization="HarvardX @ Online"
               bulletPoints={[
-                "GPA: 94.8% (73 credits so far).",
-                "Awarded the IMES scholarship, given to exceptional international students entering UBC based on academic excellence and community involvement",
+                "Completed HarvardX's CS50x course, including ten problem sets, eight labs, and one final project.",
               ]}
             />
           </Section>

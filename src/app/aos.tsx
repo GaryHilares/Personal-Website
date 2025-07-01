@@ -6,7 +6,9 @@ import { ReactNode, useEffect } from "react";
 
 function AosInitializer(): ReactNode {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   }, []);
 
   return null;

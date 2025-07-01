@@ -6,39 +6,17 @@ interface LinkData {
   url: string;
 }
 
-function NavBar({
-  personalProjectsId,
-  technicalSkillsId,
-  workExperienceId,
-  contestsId,
-  educationId,
-}: {
-  personalProjectsId: string;
-  technicalSkillsId: string;
-  workExperienceId: string;
-  contestsId: string;
-  educationId: string;
-}) {
+function NavBar({ links }: { links: Array<LinkData> }) {
   return (
     <header>
       <div className="overflow-auto mx-3">
         <h1 className="font-bold inline-block m-3">Gary Hilares</h1>
         <ul className="float-right">
-          <li className="inline-block m-3">
-            <a href={`#${technicalSkillsId}`}>Technical skills</a>
-          </li>
-          <li className="inline-block m-3">
-            <a href={`#${personalProjectsId}`}>Personal projects</a>
-          </li>
-          <li className="inline-block m-3">
-            <a href={`#${workExperienceId}`}>Work experience</a>
-          </li>
-          <li className="inline-block m-3">
-            <a href={`#${contestsId}`}>Contests & Awards</a>
-          </li>
-          <li className="inline-block m-3">
-            <a href={`#${educationId}`}>Education & Certifications</a>
-          </li>
+          {links.map((link, idx) => (
+            <li key={idx} className="inline-block m-3">
+              <a href={link.url}>{link.text}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </header>
@@ -203,11 +181,13 @@ export default function Home() {
     <>
       <AosInitializer />
       <NavBar
-        personalProjectsId={personalProjectsId}
-        technicalSkillsId={technicalSkillsId}
-        workExperienceId={workExperienceId}
-        contestsId={contestsId}
-        educationId={educationId}
+        links={[
+          { text: "Personal projects", url: `#${personalProjectsId}` },
+          { text: "Technical skills", url: `#${technicalSkillsId}` },
+          { text: "Work experience", url: `#${workExperienceId}` },
+          { text: "Contests & Awards", url: `#${contestsId}` },
+          { text: "Education & Certifications", url: `#${educationId}` },
+        ]}
       />
       <main className="p-3 md:w-[66%] m-auto">
         <article>

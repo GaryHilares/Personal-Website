@@ -175,8 +175,8 @@ function SkillSubsectionDisplay({
 }
 
 export default function Home() {
-  const personalProjectsId = `personal-projects-${useId()}`;
   const technicalSkillsId = `technical-skills-${useId()}`;
+  const personalProjectsId = `personal-projects-${useId()}`;
   const workExperienceId = `work-experience-${useId()}`;
   const contestsId = `contests-id-${useId()}`;
   const educationId = `education-id-${useId()}`;
@@ -185,8 +185,8 @@ export default function Home() {
       <AosInitializer />
       <NavBar
         links={[
-          { text: "Personal projects", url: `#${personalProjectsId}` },
           { text: "Technical skills", url: `#${technicalSkillsId}` },
+          { text: "Personal projects", url: `#${personalProjectsId}` },
           { text: "Work experience", url: `#${workExperienceId}` },
           { text: "Contests & Awards", url: `#${contestsId}` },
           { text: "Education & Certifications", url: `#${educationId}` },

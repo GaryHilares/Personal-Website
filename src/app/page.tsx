@@ -194,7 +194,7 @@ export default function Home() {
       />
       <main
         className={
-          'bg-[url("/img/rocket-striving.png")] bg-blend-multiply bg-size-[50px] bg-white'
+          'bg-[url("/img/rocket-striving.png")] bg-blend-multiply bg-size-[50px] bg-center bg-blue-100'
         }
       >
         <article className="p-5 md:w-[66%] m-auto bg-white border-solid border-x-1">

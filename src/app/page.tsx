@@ -98,7 +98,7 @@ function ProjectCard({
   date: string;
   technologies: string[];
   bulletPoints: string[];
-  videoUrl: string | null;
+  videoUrl?: string;
 }) {
   return (
     <div className="py-3">

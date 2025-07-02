@@ -198,7 +198,7 @@ export default function Home() {
             title="Gary Hilares"
             subtitle="All-rounded software developer"
             subsubtitle="Principled, passionate, user-focused programming"
-            src="https://avatars.githubusercontent.com/u/46727048?s=400&u=9bdce7cb9eabd7d51bebbf77fd755a3c38ac873a&v=4"
+            src="img/rocket-striving.png"
             links={[
               { text: "GitHub", url: "https://github.com/GaryHilares" },
               {

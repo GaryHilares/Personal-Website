@@ -42,7 +42,7 @@ function Hero({
   phrase: string;
 }) {
   return (
-    <div className="min-h-[75vh] flex" data-aos="flip-up">
+    <div className="py-5 flex" data-aos="flip-up">
       <div className="m-auto">
         <h1 className="text-center font-bold text-4xl">{title}</h1>
         <p className="text-center font-bold text-xl">{subtitle}</p>

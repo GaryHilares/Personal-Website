@@ -13,7 +13,10 @@ function NavBar({ links }: { links: Array<LinkData> }) {
         <h1 className="font-bold inline-block m-3">Gary Hilares</h1>
         <ul className="float-right">
           {links.map((link, idx) => (
-            <li key={idx} className="inline-block m-3">
+            <li
+              key={idx}
+              className="inline-block m-3 hover:text-blue-600 transition-colors"
+            >
               <a href={link.url}>{link.text}</a>
             </li>
           ))}

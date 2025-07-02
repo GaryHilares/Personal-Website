@@ -91,12 +91,14 @@ function ProjectCard({
   date,
   technologies,
   bulletPoints,
+  videoUrl,
 }: {
   name: string;
   url: string;
   date: string;
   technologies: string[];
   bulletPoints: string[];
+  videoUrl: string | null;
 }) {
   return (
     <div className="py-3">
@@ -118,6 +120,20 @@ function ProjectCard({
       >
         GitHub
       </a>
+      {videoUrl && (
+        <div className="m-auto p-3 align-center">
+          <iframe
+            className="block m-auto"
+            width="560"
+            height="315"
+            src={videoUrl}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      )}
     </div>
   );
 }

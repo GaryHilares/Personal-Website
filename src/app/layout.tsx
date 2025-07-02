@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   title: "Home - Gary Hilares's personal website",
   description:
     "Gary Hilares's personal website for showcasing software development projects.",
+  icons: {
+    icon: [
+      {
+        url: "/img/rocket-striving.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

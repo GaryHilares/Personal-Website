@@ -8,14 +8,14 @@ interface LinkData {
 
 function NavBar({ links }: { links: Array<LinkData> }) {
   return (
-    <header>
+    <header className="bg-blue-300 border-b-1 border-solid">
       <div className="overflow-auto mx-3">
         <h1 className="font-bold inline-block m-3">Gary Hilares</h1>
         <ul className="float-right">
           {links.map((link, idx) => (
             <li
               key={idx}
-              className="inline-block m-3 hover:text-blue-600 transition-colors"
+              className="inline-block m-3 hover:text-blue-800 transition-colors"
             >
               <a href={link.url}>{link.text}</a>
             </li>
@@ -51,7 +51,7 @@ function Hero({
           {links.map((link, idx) => (
             <li
               key={idx}
-              className="inline-block my-1 mx-3 px-1 border-1 rounded-md text-blue-600 hover:text-white hover:bg-blue-600 transition-colors"
+              className="inline-block my-1 mx-3 px-1 border-1 rounded-md text-blue-800 hover:text-white hover:bg-blue-800 transition-colors"
             >
               <a href={link.url}>{link.text}</a>
             </li>
@@ -114,7 +114,7 @@ function ProjectCard({
       <p className="underline">Links:</p>
       <a
         href={url}
-        className="inline-block border-1 rounded-md px-1 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors"
+        className="inline-block border-1 rounded-md px-1 text-blue-800 hover:text-white hover:bg-blue-800 transition-colors"
       >
         GitHub
       </a>
@@ -192,13 +192,17 @@ export default function Home() {
           { text: "Education & Certifications", url: `#${educationId}` },
         ]}
       />
-      <main className="p-3 md:w-[66%] m-auto">
-        <article>
+      <main
+        className={
+          'bg-[url("/img/rocket-striving.png")] bg-blend-multiply bg-size-[50px] bg-white'
+        }
+      >
+        <article className="p-5 md:w-[66%] m-auto bg-white border-solid border-x-1">
           <Hero
             title="Gary Hilares"
             subtitle="All-rounded software developer"
             subsubtitle="Principled, passionate, user-focused programming"
-            src="img/rocket-striving.png"
+            src="/img/rocket-striving.png"
             links={[
               { text: "GitHub", url: "https://github.com/GaryHilares" },
               {

@@ -66,6 +66,36 @@ function Hero({
   );
 }
 
+function AboutMe() {
+  return (
+    <div className="m-3">
+      <h2 className="font-bold text-xl">About me</h2>
+      <p className="my-1">
+        As a software developer, rather than focusing on a single aspect of
+        computer science, I strive to gain deep understanding to integrate
+        different fields of software into a holistic design. I believe that a
+        good software developer should know about many fields, such as software
+        development practices, algorithm implementations, cybersecurity, and
+        AI/ML. Without an understanding of these different fields, a software
+        developer is likely to reach an incomplete solution.
+      </p>
+      <p className="my-1">
+        Rather than sticking to a single technology for all my projects, I
+        strive to learn new technologies and strive to use "the right tool for
+        the right job". Different tools excel at different tasks, so staying
+        open-minded to consider their strengths and weaknesses remains
+        important.
+      </p>
+      <p className="my-1">
+        If for some reason you want to know, aside from software-related
+        activities, I enjoy having friendly conversations, playing chess,
+        running, practicing kendo, meditating, learning French and Japanese,
+        listening to music, watching anime, or learning random skills.
+      </p>
+    </div>
+  );
+}
+
 function Section({
   title,
   children,
@@ -229,6 +259,7 @@ export default function Home() {
             ]}
             phrase="Welcome to my website!"
           />
+          <AboutMe />
           <Section title="Technical skills" id={technicalSkillsId}>
             <SkillSubsectionDisplay
               title="Languages"

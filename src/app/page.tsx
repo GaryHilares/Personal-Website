@@ -246,7 +246,7 @@ export default function Home() {
         <article className="p-5 md:w-[66%] m-auto bg-white border-solid border-x-1">
           <Hero
             title="Gary Hilares"
-            subtitle="All-rounded software developer"
+            subtitle="Square-shaped software developer"
             subsubtitle="Principled, passionate, user-focused programming"
             src="/img/rocket-striving.png"
             links={[
